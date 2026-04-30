@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARS.DEV — Ars Febry · Frontend Engineer</title>
+    <meta name="description" content="Ars Febry — Frontend Engineer CV." />
+
+    <!-- Fonts preconnect dulu biar cepat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load fonts via <link>, BUKAN @import di SCSS — ini yg bikin tab loading terus -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Inline critical styles: splash screen muncul SEBELUM JS load -->
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        background: var(--dark-950);
+      }
+      body {
+        background: var(--dark-950);
+        overflow: auto;
+      }
+
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: #05050a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        transition:
+          opacity 0.5s ease,
+          visibility 0.5s ease;
+      }
+      #splash.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .splash-logo {
+        font-family: "Syne", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #fff;
+      }
+      .splash-logo .m {
+        color: #ff00aa;
+      }
+      .splash-logo .t {
+        color: #00f5d4;
+      }
+
+      .splash-bar-wrap {
+        width: 160px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .splash-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff00aa, #00f5d4);
+        border-radius: 2px;
+        animation: splashLoad 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      .splash-status {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.25);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        animation: splashBlink 1s ease infinite alternate;
+      }
+
+      /* Decorative grid */
+      #splash::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 0, 170, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 0, 170, 0.03) 1px, transparent 1px);
+        background-size: 44px 44px;
+        pointer-events: none;
+      }
+      /* Ambient glows */
+      #splash::after {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 0, 170, 0.08),
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      @keyframes splashLoad {
+        0% {
+          width: 0%;
+        }
+        40% {
+          width: 55%;
+        }
+        70% {
+          width: 80%;
+        }
+        90% {
+          width: 93%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+      @keyframes splashBlink {
+        from {
+          opacity: 0.3;
+        }
+        to {
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Splash screen: render INSTAN sebelum Vue mount -->
+    <div id="splash">
+      <div class="splash-logo">
+        Ars<span class="m">.</span><span class="t">Dev</span>
+      </div>
+      <div class="splash-bar-wrap">
+        <div class="splash-bar"></div>
+      </div>
+      <div class="splash-status">Initializing...</div>
+    </div>
+
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

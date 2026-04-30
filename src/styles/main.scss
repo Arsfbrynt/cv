@@ -1,0 +1,585 @@
+// === NEXUS.ARS — Main Styles ===
+// Font loading dipindah ke index.html <link> biar non-blocking
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// === CSS Variables ===
+:root {
+  --magenta: #ff00aa;
+  --magenta-dim: #cc0088;
+  --magenta-glow: rgba(255, 0, 170, 0.2);
+  --teal: #00f5d4;
+  --teal-dim: #00c4aa;
+  --teal-glow: rgba(0, 245, 212, 0.2);
+  --dark-950: #050525;
+  --dark-900: #080857;
+  --dark-800: #121291;
+  --dark-700: #141424;
+  --dark-600: #0c0ca9;
+  --dark-500: #1717cf;
+  --dark-400: #1f1fdf;
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-muted: rgba(255, 255, 255, 0.3);
+}
+
+// === Base Reset ===
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--magenta-dim) var(--dark-800);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-800);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--magenta-dim);
+  border-radius: 2px;
+}
+
+body {
+  background-color: var(--dark-950);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+// === Typography ===
+.font-display {
+  font-family: "Syne", sans-serif;
+}
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syne", sans-serif;
+  line-height: 1.2;
+}
+
+// === Background Grid ===
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 0, 170, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 170, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+// === Neon Text ===
+.neon-text-magenta {
+  color: var(--magenta);
+  text-shadow:
+    0 0 10px rgba(255, 0, 170, 0.6),
+    0 0 30px rgba(255, 0, 170, 0.3);
+}
+
+.neon-text-teal {
+  color: var(--teal);
+  text-shadow:
+    0 0 10px rgba(0, 245, 212, 0.6),
+    0 0 30px rgba(0, 245, 212, 0.3);
+}
+
+// === Gradient Text ===
+.gradient-text {
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-reverse {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// === Cards ===
+.nexus-card {
+  background: rgba(15, 15, 26, 0.8);
+  border: 1px solid rgba(255, 0, 170, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 0, 170, 0.25);
+    box-shadow:
+      0 0 0 1px rgba(255, 0, 170, 0.12),
+      0 8px 40px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+.nexus-card-teal {
+  background: rgba(15, 15, 26, 0.8);
+  border: 1px solid rgba(0, 245, 212, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(0, 245, 212, 0.25);
+    box-shadow:
+      0 0 0 1px rgba(0, 245, 212, 0.12),
+      0 8px 40px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+// === Buttons ===
+.btn-magenta {
+  position: relative;
+  padding: 0.6rem 1.5rem;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  border: 1px solid var(--magenta);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--magenta);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  &:hover {
+    color: var(--dark-900);
+    text-shadow: none;
+
+    &::before {
+      opacity: 1;
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.btn-teal {
+  @extend .btn-magenta;
+  color: var(--teal);
+  border-color: var(--teal);
+
+  &::before {
+    background: var(--teal);
+  }
+  &:hover {
+    color: var(--dark-900);
+  }
+}
+
+// === Tags / Badges ===
+.tech-tag {
+  // display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--teal);
+  background: rgba(0, 245, 212, 0.08);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 245, 212, 0.15);
+    border-color: rgba(0, 245, 212, 0.4);
+  }
+}
+
+.tag-magenta {
+  color: var(--magenta);
+  background: rgba(255, 0, 170, 0.08);
+  border-color: rgba(255, 0, 170, 0.2);
+
+  &:hover {
+    background: rgba(255, 0, 170, 0.15);
+    border-color: rgba(255, 0, 170, 0.4);
+  }
+}
+
+// === Section Headers ===
+.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &::before {
+    content: "//";
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--magenta), transparent);
+  }
+}
+
+.section-title {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+// === Skill Bar ===
+.skill-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--magenta), var(--teal));
+    border-radius: 2px;
+    position: relative;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--teal);
+    }
+  }
+}
+
+// === Timeline ===
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--magenta),
+    var(--teal),
+    transparent
+  );
+  opacity: 0.3;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--magenta);
+  box-shadow:
+    0 0 8px var(--magenta),
+    0 0 16px rgba(255, 0, 170, 0.4);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+
+  &.active {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+}
+
+// === Navigation ===
+.nav-item {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.4rem 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--magenta);
+    transition: width 0.25s ease;
+    box-shadow: 0 0 6px var(--magenta);
+  }
+
+  &:hover,
+  &.active {
+    color: var(--magenta);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// === Glitch Effect ===
+.glitch {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    color: var(--teal);
+    animation: glitch1 3s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+
+  &::after {
+    color: var(--magenta);
+    animation: glitch2 3s infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes glitch1 {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  92% {
+    transform: translate(-2px, 1px);
+    opacity: 0.8;
+  }
+  94% {
+    transform: translate(2px, -1px);
+    opacity: 0.8;
+  }
+  96% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitch2 {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  93% {
+    transform: translate(2px, 1px);
+    opacity: 0.8;
+  }
+  95% {
+    transform: translate(-2px, -1px);
+    opacity: 0.8;
+  }
+  97% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow:
+      0 0 5px #ff00aa44,
+      0 0 20px #ff00aa22;
+  }
+  100% {
+    box-shadow:
+      0 0 15px #ff00aaaa,
+      0 0 40px #ff00aa55;
+  }
+}
+
+// === Scanline overlay ===
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.015) 2px,
+    rgba(0, 0, 0, 0.015) 4px
+  );
+}
+
+// === Corner decoration ===
+.corner-tl,
+.corner-br {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.corner-tl {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--magenta);
+  border-left: 1px solid var(--magenta);
+}
+
+.corner-br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--teal);
+  border-right: 1px solid var(--teal);
+}
+
+// === Avatar ===
+.avatar-ring {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(var(--magenta), var(--teal), var(--magenta));
+    animation: spin-slow 6s linear infinite;
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(
+      transparent 120deg,
+      var(--teal) 180deg,
+      transparent 240deg
+    );
+    animation: spin-slow 6s linear infinite reverse;
+    opacity: 0.4;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// === Project Card ===
+.project-img {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 18, 0.95) 0%,
+      transparent 60%
+    );
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    // object-fit: cover;
+    filter: saturate(0.7) brightness(0.8);
+    transition: all 0.4s ease;
+  }
+}
+
+.project-card:hover .project-img img {
+  filter: saturate(1) brightness(1);
+  transform: scale(1.05);
+}
+
+// === Shimmer loading ===
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 170, 0) 0%,
+    rgba(255, 0, 170, 0.06) 50%,
+    rgba(255, 0, 170, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+// === Mobile Nav ===
+.mobile-nav-overlay {
+  backdrop-filter: blur(16px);
+  background: rgba(5, 5, 8, 0.95);
+}
+
+// === Scroll indicator ===
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--magenta), var(--teal));
+  z-index: 9998;
+  box-shadow: 0 0 8px var(--magenta);
+  transition: width 0.1s ease;
+}
+
+// === Responsive utilities ===
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}

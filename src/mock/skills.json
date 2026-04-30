@@ -1,0 +1,133 @@
+{
+  "technical": [
+    {
+      "name": "JavaScript",
+      "level": 90,
+      "icon": "fa-brands fa-js",
+      "category": "Language"
+    },
+    {
+      "name": "TypeScript",
+      "level": 85,
+      "icon": "fa-brands fa-typescript",
+      "category": "Language"
+    },
+    {
+      "name": "Vue",
+      "level": 92,
+      "icon": "fa-brands fa-vuejs",
+      "category": "Framework"
+    },
+    {
+      "name": "ReactJS",
+      "level": 80,
+      "icon": "fa-brands fa-react",
+      "category": "Framework"
+    },
+    {
+      "name": "Nuxt.js",
+      "level": 90,
+      "icon": "fa-solid fa-layer-group",
+      "category": "Framework"
+    },
+    {
+      "name": "HTML",
+      "level": 90,
+      "icon": "fa-brands fa-html5",
+      "category": "Styling"
+    },
+    {
+      "name": "CSS / SCSS",
+      "level": 88,
+      "icon": "fa-brands fa-css3-alt",
+      "category": "Styling"
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": 92,
+      "icon": "fa-brands fa-tailwind-css",
+      "category": "Styling"
+    },
+    {
+      "name": "Vite",
+      "level": 82,
+      "icon": "fa-solid fa-bolt-lightning",
+      "category": "Tooling"
+    },
+    {
+      "name": "Pinia",
+      "level": 88,
+      "icon": "fa-solid fa-database",
+      "category": "State"
+    },
+    {
+      "name": "Git",
+      "level": 85,
+      "icon": "fa-brands fa-git-alt",
+      "category": "Tooling"
+    },
+    {
+      "name": "Figma",
+      "level": 80,
+      "icon": "fa-brands fa-figma",
+      "category": "Tooling"
+    },
+    {
+      "name": "MUI / AntD / Element+",
+      "level": 88,
+      "icon": "fa-brands fa-uikit",
+      "category": "Integration",
+      "small": true
+    }
+  ],
+  "soft": [
+    {
+      "text": "Cross-functional Collaboration",
+      "icon": "fa-solid fa-people-group"
+    },
+    {
+      "text": "Clear & Structured Communication",
+      "icon": "fa-solid fa-comments"
+    },
+    {
+      "text": "Creative Problem Solving",
+      "icon": "fa-solid fa-lightbulb"
+    },
+    {
+      "text": "Strong Ownership & Accountability",
+      "icon": "fa-solid fa-user-check"
+    },
+    {
+      "text": "Continuous Learning Mindset",
+      "icon": "fa-solid fa-book-open"
+    },
+    {
+      "text": "Adaptability in Fast-paced Environment",
+      "icon": "fa-solid fa-bolt"
+    },
+    {
+      "text": "Attention to Detail",
+      "icon": "fa-solid fa-magnifying-glass"
+    },
+    {
+      "text": "Technical Documentation & Knowledge Sharing",
+      "icon": "fa-solid fa-file-lines"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Frontend Developer",
+      "issuer": "Dicoding",
+      "year": 2022,
+      "icon": "fa-certificate",
+      "url": "https://www.dicoding.com/certificates/NVP7N4D5VZR0"
+    },
+    {
+      "name": "Informatics Engineering",
+      "issuer": "Muhammadiyah University of Purwokerto",
+      "year": 2019,
+      "icon": "fa-award",
+      "url": "https://drive.google.com/file/d/1sR6TTIGJTJiVl7c-SWMxoBG5qM3Q-5Af/view?usp=sharing"
+    }
+  ]
+}

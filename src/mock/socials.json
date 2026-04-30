@@ -1,0 +1,26 @@
+[
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/ArsFbrynt",
+    "icon": "fa-brands fa-github",
+    "username": "@ArsFbrynt"
+  },
+  {
+    "platform": "LinkedIn",
+    "url": "https://linkedin.com/in/ArsFbrynt",
+    "icon": "fa-brands fa-linkedin",
+    "username": "Aris Febriyanto"
+  },
+  {
+    "platform": "Instagram",
+    "url": "https://instagram.com/ars_fbrynt",
+    "icon": "fa-brands fa-instagram",
+    "username": "Ars_fbrynt"
+  },
+  {
+    "platform": "Email",
+    "url": "mailto:arsfbrynt@gmail.com",
+    "icon": "fa-solid fa-envelope",
+    "username": "arsfbrynt@gmail.com"
+  }
+]

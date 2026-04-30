@@ -1,0 +1,359 @@
+[
+  {
+    "id": 1,
+    "company": "PT Bangunindo Teknusa Jaya",
+    "role": "Frontend Engineer",
+    "startDate": "2023-08",
+    "endDate": null,
+    "description": "Built and maintained scalable frontend applications using Vue & TypeScript ecosystem. Improved application performance through optimization techniques, refactored existing codebase to increase maintainability, and enhanced user experience by refining UI/UX flows. Worked closely with cross-functional teams to deliver high-quality, responsive, and production-ready features.",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["Vue", "Nuxt", "TypeScript", "JavaScript"]
+      },
+      {
+        "title": "State & API",
+        "items": ["Pinia", "Axios", "JWT"]
+      },
+      {
+        "title": "UI / Styling",
+        "items": [
+          "Tailwind",
+          "SCSS",
+          "Element Plus",
+          "Lucide Vue Next",
+          "Storybook (Official UI)"
+        ]
+      },
+      {
+        "title": "Fullstack",
+        "items": ["PHP", "CodeIgniter 4"]
+      },
+      {
+        "title": "Data Visualization",
+        "items": ["ECharts", "Highcharts"]
+      },
+      {
+        "title": "Dev Tools",
+        "items": ["Vite", "Docker", "Git"]
+      },
+      {
+        "title": "Utilities",
+        "items": ["Day.js", "Lodash", "Tiptap"]
+      },
+      {
+        "title": "Collaboration",
+        "items": ["Jira", "Slack", "Figma", "Zeplin"]
+      }
+    ],
+    "image": "/images/exp/btj.png",
+    "type": "full-time",
+    "projects": [
+      {
+        "name": "NMS Paring",
+        "description": "Real-time data visualization platform with WebSocket feeds, custom chart components, and exportable PDF reports.",
+        "image": "/images/project/btj-nms.png",
+        "tech": [
+          "Vue",
+          "PHP",
+          "Highchart",
+          "Element Plus",
+          "Tailwind",
+          "Pinia",
+          "V3-gmaps",
+          "VuePDF"
+        ],
+        "link": "https://baktibackbone.id",
+        "need-access": "vpn"
+      },
+      {
+        "name": "Telkomsel NDM",
+        "description": "Enterprise data management platform used internally at Telkomsel for data cataloging, access requests, data quality monitoring, and processing (e.g., interpolation). Built with a modular Nuxt 3 architecture, supporting complex data workflows and role-based access control.",
+        "image": "/images/project/btj-ndm.png",
+        "tech": [
+          "Nuxt 3",
+          "Vue 3",
+          "Pinia",
+          "Bootstrap",
+          "ApexCharts",
+          "CKEditor 5",
+          "Monaco Editor",
+          "Vue Flow",
+          "Axios",
+          "Yup Validation"
+        ],
+        "link": "https://ndm.telkomsel.com",
+        "need-access": "vpn"
+      },
+      {
+        "name": "Story Book BTJ UI",
+        "description": "Internal UI library with 60+ components, Storybook documentation",
+        "image": "/images/project/btj-sb.png",
+        "tech": ["Vue 3", "Storybook", "Tailwind", "SCSS"],
+        "link": "https://storybook.bangunindo.io/",
+        "need-access": "vpn"
+      },
+      {
+        "name": "Ekraf",
+        "description": "Official web platform for the Ministry of Creative Economy of Indonesia, featuring dynamic content management, multilingual support, and integrated data visualization dashboards. Built with Nuxt 3 and optimized for performance, SEO, and scalability.",
+        "image": "/images/project/btj-ekraf.png",
+        "tech": [
+          "Nuxt 3",
+          "Tailwind CSS",
+          "Pinia",
+          "Superset Embedded",
+          "VueUse",
+          "Nuxt Image",
+          "i18n",
+          "PDF.js",
+          "Page Flip"
+        ],
+        "link": "https://storybook.bangunindo.io/",
+        "need-access": "vpn"
+      },
+      {
+        "name": "Bliv AI Studio",
+        "description": "AI workflow builder platform for creating and managing LLM-based applications through a visual node-based interface. Features include real-time collaboration, rich text and code editing, and dynamic flow orchestration. Built with Vue 3 and Vite for high-performance interaction.",
+        "image": "/images/project/btj-bliv.png",
+        "tech": [
+          "Vue 3",
+          "Vite",
+          "Pinia",
+          "Vue Flow",
+          "Monaco Editor",
+          "TipTap",
+          "Yjs (Realtime)",
+          "Tailwind CSS",
+          "ECharts",
+          "Sentry"
+        ],
+        "link": "https://bliv.id/products/bliv-ai",
+        "need-access": "account"
+      },
+
+      {
+        "name": "Kemendagri Datahub",
+        "description": "Pengadaan Perangkat Lunak Monitoring Program Prioritas Presiden.",
+        "image": "/images/project/btj-garuda.png",
+        "tech": [
+          "Vue 3",
+          "Vite",
+          "Pinia",
+          "MarkedJS",
+          "Monaco Editor",
+          "BTJ UI",
+          "ECharts"
+        ],
+        "link": "https://garuda.kemendagri.go.id",
+        "need-access": "account"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "company": "PT Indocyber Global Teknologi",
+    "role": "Frontend Engineer",
+    "startDate": "2022-05",
+    "endDate": "2023-05",
+    "description": "Developed scalable client-facing web applications based on design specifications. Collaborated closely with UI/UX teams using Figma to deliver pixel-perfect and responsive interfaces. Contributed to improving the frontend stack by introducing Vue and React.",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["Vue", "Nuxt", "ReactJS", "JavaScript"]
+      },
+      {
+        "title": "State & API",
+        "items": ["Pinia", "Vuex", "Axios"]
+      },
+      {
+        "title": "UI / Styling",
+        "items": ["Tailwind", "SCSS", "Quasar", "Ant Design", "Material UI"]
+      },
+      {
+        "title": "Tools & Collaboration",
+        "items": ["Figma", "Git"]
+      }
+    ],
+    "image": "/images/exp/iglo.png",
+    "type": "full-time",
+    "projects": [
+      {
+        "name": "E-Commerce Juragan Material",
+        "description": "Multi-vendor marketplace with cart system, payment integration, and vendor analytics panel.",
+        "image": "/images/project/jm-ecomm.png",
+        "tech": ["Nuxt", "Quasar", "SCSS", "Pinia", "Antd Design", "Figma"],
+        "link": "https://juraganmaterial.id",
+        "need-access": ""
+      },
+      {
+        "name": "CMS Juragan Material",
+        "description": "Content Management System for product, purchase etc in e-commerce.",
+        "image": "/images/project/jm-cms.webp",
+        "tech": ["Vue", "Vuex", "Quasar", "SCSS", "Pinia", "Antd Design"],
+        "link": "https://cms.juraganmaterial.id",
+        "need-access": "account"
+      },
+
+      {
+        "name": "IMS Juragan Material",
+        "description": "Inventory Management System for Juragan Vendor.",
+        "image": "/images/project/jm-ims.png",
+        "tech": ["ReactJS", "Material UI", "Figma", "SCSS"],
+        "link": "https://vendor.juraganmaterial.id/",
+        "need-access": "account"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "company": "PT Teknologi Interaktif Satupintu",
+    "role": "Frontend Developer",
+    "startDate": "2022-1",
+    "endDate": "2022-14",
+    "description": "Built and delivered multiple MVPs and landing pages for early-stage startups across various industries. Focused on rapid development, responsive design, and translating business requirements into functional web interfaces.",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["JavaScript", "WordPress"]
+      },
+      {
+        "title": "UI / Interaction",
+        "items": ["Swiper"]
+      },
+      {
+        "title": "Focus Area",
+        "items": ["Landing Page", "MVP Development", "Responsive Design"]
+      }
+    ],
+    "image": "/images/exp/sp.png",
+    "type": "freelance",
+    "projects": [
+      {
+        "name": "Kratingdaeng Community",
+        "description": "Developed a community platform to engage users through content, campaigns, and interactive features. Focused on responsive layout, smooth user experience, and dynamic content management using WordPress.",
+        "image": "/images/project/tisp-krat.png",
+        "tech": ["Wordpress", "Swiper", "Javascript"],
+        "link": "https://wpdemo.multimediaintegrasi.com/kratingdaeng-community/"
+      },
+      {
+        "name": "Zevalink",
+        "description": "Built a delivery service web application with real-time order tracking and management features. Implemented responsive UI components and optimized state handling for better performance.",
+        "image": "/images/project/tisp-zeva.png",
+        "tech": ["Vue 2", "Antd Design", "Pinia"],
+        "link": ""
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "company": "PT Onmaca Cerdas Bangsa",
+    "role": "Frontend Developer",
+    "startDate": "2020-11",
+    "endDate": "2021-11",
+    "description": "Developed interactive educational web applications focused on mathematics learning. Implemented dynamic formula rendering using MathJax and built visual simulations with Canvas to enhance user understanding.",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["HTML 5", "CSS 3", "JavaScript"]
+      },
+      {
+        "title": "Visualization & Rendering",
+        "items": ["MathJax", "Canvas"]
+      },
+      {
+        "title": "Focus Area",
+        "items": ["Interactive Learning", "Math Simulation"]
+      }
+    ],
+    "image": "/images/exp/ocb.png",
+    "type": "contract",
+    "projects": [
+      {
+        "name": "Math Interactive",
+        "description": "Web simulation for learning complete mathematics from elementary to high school",
+        "image": "/images/project/ocb.png",
+        "tech": ["HTML 5", "CSS 3", "Javascript", "MathJax", "Canvas"],
+        "link": "https://sahabatcerdas.com"
+      }
+    ]
+  },
+
+  {
+    "id": 5,
+    "company": "My Shop Agency",
+    "role": "Software Developer",
+    "startDate": "2020-03",
+    "endDate": "2020-10",
+    "description": "Developed and customized Shopify-based e-commerce solutions, including theme development, feature enhancements, and backend integrations. Ensured performance optimization and seamless user experience.",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["PHP", "CodeIgniter"]
+      },
+      {
+        "title": "Platform",
+        "items": ["Shopify", "Liquid"]
+      },
+      {
+        "title": "Infrastructure",
+        "items": ["AWS"]
+      },
+      {
+        "title": "Focus Area",
+        "items": ["E-Commerce Development", "Theme Customization"]
+      }
+    ],
+    "image": "/images/exp/msa.png",
+    "type": "freelance",
+    "projects": []
+  },
+
+  {
+    "id": 6,
+    "company": "Own Project",
+    "role": "Mini Project",
+    "startDate": "-",
+    "endDate": "-",
+    "description": "Web App Full Frontend to help anyone who need it (free)",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["Vue", "TypeScript", "JavaScript"]
+      },
+      {
+        "title": "State & API",
+        "items": ["Pinia", "Axios", "Supabase"]
+      },
+      {
+        "title": "UI / Styling",
+        "items": [
+          "Tailwind",
+          "SCSS",
+          "html2canvas",
+          "Lucide Vue Next",
+          "Workbox Window"
+        ]
+      }
+    ],
+    "image": "/images/exp/dzikrApp.png",
+    "type": "Own Project",
+    "projects": [
+      {
+        "name": "DzikrApp",
+        "description": "Web simulation for learning complete mathematics from elementary to high school",
+        "image": "/images/project/own-dzikr.png",
+        "tech": [
+          "Vue 3",
+          "TypsScript",
+          "Tailwind",
+          "SCSS",
+          "html2canvas",
+          "Lucide Vue Next",
+          "Workbox Window"
+        ],
+        "link": "https://dzikrApp.vercel.app"
+      }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+[
+  { "name": "About", "section": "about", "icon": "fa-user" },
+  {
+    "name": "Experience & Projects",
+    "section": "experience",
+    "icon": "fa-briefcase"
+  },
+  { "name": "Skills", "section": "skills", "icon": "fa-layer-group" }
+]
