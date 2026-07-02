@@ -27,9 +27,11 @@
             class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-sm border border-neon-teal/20 bg-neon-teal/5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-neon-teal animate-pulse" />
-            <span class="font-mono text-neon-teal text-xs tracking-widest">{{
-              profile.availableText
-            }}</span>
+            <span
+              class="font-mono text-neon-teal text-xs tracking-widest"
+              :class="!isDark && 'text-teal-700'"
+              >{{ profile.availableText }}</span
+            >
           </div>
 
           <h1 class="section-title mb-2">
@@ -102,7 +104,7 @@
                 class="absolute inset-1 rounded-full overflow-hidden z-10 bg-dark-800"
               >
                 <img
-                  :src="profile.avatar"
+                  :src="isDark ? profile.avatar : profile.avatarWhite"
                   :alt="profile.name"
                   class="w-full h-[130%] object-cover"
                   @error="handleAvatarError"
@@ -152,16 +154,47 @@
           </div>
 
           <div class="flex gap-3">
-            <a
-              v-for="social in socials"
-              :key="social.platform"
-              :href="social.url"
-              target="_blank"
-              :title="social.platform"
-              class="w-9 h-9 flex items-center justify-center border border-white/8 hover:border-neon-magenta/50 text-white/50 hover:text-neon-magenta transition-all duration-200 rounded-sm hover:shadow-neon-magenta"
-            >
-              <i :class="social.icon + ' text-sm'" />
-            </a>
+            <template v-for="social in socials" :key="social.platform">
+              <!-- JIKA PUNYA CHILD: Jadi Dropdown Keluar Samping Kiri -->
+              <div
+                v-if="social.child && social.child.length > 0"
+                class="relative group/social cursor-pointer w-9 h-9 flex items-center justify-center border border-white/8 hover:border-neon-magenta/50 text-white/50 hover:text-neon-magenta transition-all duration-200 rounded-sm hover:shadow-neon-magenta"
+              >
+                <i :class="social.icon + ' text-sm'" />
+
+                <!-- Invisible Bridge (pr-2) + Animasi Keluar Samping Kiri -->
+                <div
+                  class="absolute right-full top-0 pr-2 pointer-events-none group-hover/social:pointer-events-auto opacity-0 scale-95 translate-x-2 group-hover/social:opacity-100 group-hover/social:scale-100 group-hover/social:translate-x-0 transition-all duration-200 origin-right z-50 min-w-[150px]"
+                >
+                  <!-- Kotak Dropdown List Akun -->
+                  <div
+                    class="flex flex-col bg-dynamic-white/95 backdrop-blur-md border border-white/10 rounded-sm shadow-xl overflow-hidden shadow-neon-magenta/5"
+                  >
+                    <a
+                      v-for="sub in social.child"
+                      :key="sub.url"
+                      :href="sub.url"
+                      target="_blank"
+                      class="flex items-center gap-2 px-3 py-2 text-left font-mono text-xs text-white/40 hover:text-white hover:bg-neon-magenta/10 border-b border-white/5 last:border-b-0 transition-all"
+                    >
+                      <i :class="[social.icon, 'text-xs text-white/20']" />
+                      {{ sub.username }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- JIKA TIDAK PUNYA CHILD: Link Biasa -->
+              <a
+                v-else
+                :href="social.url"
+                target="_blank"
+                :title="social.platform"
+                class="w-9 h-9 flex items-center justify-center border border-white/8 hover:border-neon-magenta/50 text-white/50 hover:text-neon-magenta transition-all duration-200 rounded-sm hover:shadow-neon-magenta"
+              >
+                <i :class="social.icon + ' text-sm'" />
+              </a>
+            </template>
           </div>
         </div>
       </div>
@@ -188,7 +221,7 @@ import socialsData from "../mock/socials.json";
 
 const profile = profileData as Profile;
 const socials = socialsData as Social[];
-
+const isDark = ref(true);
 const visible = ref<boolean>(false);
 const avatarError = ref<boolean>(false);
 
@@ -209,6 +242,10 @@ const highlightKeywords = [
   "industry trends",
   "client expectations",
 ];
+
+const updateThemeStatus = () => {
+  isDark.value = document.documentElement.classList.contains("dark");
+};
 
 const highlightedSummary = computed(() => {
   let text = profile.summary;
@@ -236,8 +273,13 @@ const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 onMounted(() => {
   setTimeout(() => (visible.value = true), 100);
-
+  updateThemeStatus();
   visible.value = true;
+  const observer = new MutationObserver(updateThemeStatus);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 
   const canvas = canvasRef.value!;
   const ctx = canvas.getContext("2d")!;
@@ -369,7 +411,7 @@ onMounted(() => {
 <style>
 .highlight-text {
   background: rgba(0, 245, 212, 0.02);
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 500;
   padding: 0 4px;
   border-radius: 4px;

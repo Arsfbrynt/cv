@@ -14,7 +14,7 @@
             >What I've Built</span
           >
         </h2>
-        <p class="text-white/40 mt-4 max-w-lg font-body text-sm">
+        <p class="text-dark-300/40 mt-4 max-w-lg font-body text-sm">
           A timeline of my professional journey — each role includes the
           projects built during that time.
         </p>
@@ -56,7 +56,7 @@
                     class="md:hidden timeline-dot"
                     :class="{ active: !exp.endDate }"
                   />
-                  <p class="font-mono text-xs text-white/30 md:hidden">
+                  <p class="font-mono text-xs text-dark-300/40 md:hidden">
                     {{ formatDate(exp.startDate) }} —
                     {{ exp.endDate ? formatDate(exp.endDate) : "Present" }}
                   </p>
@@ -94,7 +94,7 @@
                       />
                       <i
                         v-else
-                        class="fa-solid fa-building text-white/20 text-xs"
+                        class="fa-solid fa-building text-dark-300/40 text-xs"
                       />
                     </div>
                   </div>
@@ -128,13 +128,15 @@
                       />
                       <i
                         v-else
-                        class="fa-solid fa-building text-white/20 text-xs"
+                        class="fa-solid fa-building text-dark-300/40 text-xs"
                       />
                     </div>
 
                     <div class="flex-1 min-w-0">
                       <div class="flex flex-wrap items-center gap-2 mb-1">
-                        <h3 class="font-display font-bold text-lg text-white">
+                        <h3
+                          class="font-display font-bold text-lg text-dark-300/50"
+                        >
                           {{ exp.role }}
                         </h3>
                         <span
@@ -155,10 +157,10 @@
                           exp.company
                         }}</span>
 
-                        <span class="text-white/20">·</span>
+                        <span class="text-dark-300/40">·</span>
                         <span
                           v-if="exp.startDate !== '-'"
-                          class="hidden md:block font-mono text-xs text-white/30"
+                          class="hidden md:block font-mono text-xs text-dark-300/40"
                         >
                           {{ formatDate(exp.startDate) }} —
                           {{
@@ -166,7 +168,7 @@
                           }}
                         </span>
                       </div>
-                      <p class="text-white/50 text-sm leading-relaxed">
+                      <p class="text-dark-300/50 text-sm leading-relaxed">
                         {{ exp.description }}
                       </p>
                       <div
@@ -199,7 +201,7 @@
                         <button
                           v-if="exp.technologies.length > 1"
                           @click="toggleTech(exp.id)"
-                          class="mt-2 text-[10px] font-mono text-neon-teal hover:text-white transition"
+                          class="mt-2 text-[10px] font-mono text-neon-teal hover:text-dark-400 transition"
                         >
                           {{
                             expandedTech[exp.id] ? "- Minimize" : "+ Show More"
@@ -275,11 +277,13 @@
                         <!-- Content -->
                         <div class="p-6">
                           <h4
-                            class="font-display font-bold text-base text-white mb-2 group-hover:text-neon-teal transition-colors"
+                            class="font-display font-bold text-base text-dark-300 mb-2 group-hover:text-neon-teal transition-colors"
                           >
                             {{ proj.name }}
                           </h4>
-                          <p class="text-white/40 text-sm leading-relaxed mb-4">
+                          <p
+                            class="text-dark-300/40 text-sm leading-relaxed mb-4"
+                          >
                             {{ proj.description }}
                           </p>
                           <div class="flex flex-wrap gap-1">
@@ -518,7 +522,7 @@ onUnmounted(() => {
   width: 5px;
   height: 5px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--text-primary);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -538,7 +542,7 @@ onUnmounted(() => {
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-primary);
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;

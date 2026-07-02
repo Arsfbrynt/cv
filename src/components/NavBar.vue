@@ -29,6 +29,16 @@
           ><span class="text-neon-teal">Dev</span>
         </span>
       </a>
+      <button
+        @click="toggleTheme"
+        class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        :aria-label="
+          theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+        "
+      >
+        <span v-if="theme === 'dark'">☀️</span>
+        <span v-else>🌙</span>
+      </button>
 
       <div class="hidden md:flex items-center gap-8">
         <a
@@ -116,6 +126,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import type { MenuItem, Social } from "../types";
+import { useTheme } from "../composables/useTheme";
 import menuData from "../mock/menu.json";
 import socialsData from "../mock/socials.json";
 import {
@@ -125,6 +136,7 @@ import {
 
 const menu = menuData as MenuItem[];
 const socials = socialsData as Social[];
+const { theme, toggleTheme } = useTheme();
 
 const scrolled = ref<boolean>(false);
 const mobileOpen = ref<boolean>(false);

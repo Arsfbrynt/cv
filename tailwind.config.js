@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    // <--- 1. WAJIB DIBUNGKUS THEME DI SINI
     extend: {
       colors: {
+        white: "rgb(var(--dynamic-white) / <alpha-value>)",
         neon: {
           magenta: "#ff00aa",
           "magenta-dim": "#cc0088",
@@ -12,14 +15,15 @@ export default {
           "teal-dim": "#00c4aa",
           "teal-glow": "#00f5d433",
         },
+        tealtxt: "rgb(var(--teal-text) / <alpha-value>)",
         dark: {
-          950: "#050508",
-          900: "#0a0a12",
-          800: "#0f0f1a",
-          700: "#141424",
-          600: "#1a1a2e",
-          500: "#22223a",
-          400: "#2a2a4a",
+          950: "rgb(var(--dark-950) / <alpha-value>)",
+          900: "rgb(var(--dark-900) / <alpha-value>)",
+          800: "rgb(var(--dark-800) / <alpha-value>)",
+          700: "rgb(var(--dark-700) / <alpha-value>)",
+          600: "rgb(var(--dark-600) / <alpha-value>)",
+          500: "rgb(var(--dark-500) / <alpha-value>)",
+          400: "rgb(var(--dark-400) / <alpha-value>)",
         },
       },
       fontFamily: {
@@ -61,6 +65,6 @@ export default {
           "0 0 0 1px rgba(255,0,170,0.25), 0 8px 40px rgba(0,0,0,0.5)",
       },
     },
-  },
+  }, // <--- 2. Tutup kurung theme di sini (tadi kelebihan satu di code lo)
   plugins: [],
 };

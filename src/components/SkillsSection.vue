@@ -16,7 +16,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <div class="lg:col-span-3">
           <p
-            class="font-mono text-xs text-neon-teal/60 tracking-widest uppercase mb-6"
+            class="font-mono text-xs text-tealtxt tracking-widest uppercase mb-6"
           >
             Technical Proficiency
           </p>
@@ -88,7 +88,7 @@
             <div class="corner-tl" />
             <div class="corner-br" />
             <p
-              class="font-mono text-xs text-neon-teal/60 tracking-widest uppercase mb-4"
+              class="font-mono text-xs text-tealtxt tracking-widest uppercase mb-4"
             >
               Course | Education
             </p>

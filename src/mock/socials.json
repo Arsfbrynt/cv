@@ -1,26 +1,39 @@
 [
   {
     "platform": "GitHub",
-    "url": "https://github.com/ArsFbrynt",
+    "url": "",
     "icon": "fa-brands fa-github",
-    "username": "@ArsFbrynt"
+    "username": "My Github",
+    "child": [
+      {
+        "url": "https://github.com/ArsFbrynt",
+        "username": "@ArsFbrynt"
+      },
+      {
+        "url": "https://github.com/arisfe",
+        "username": "@arisfe"
+      }
+    ]
   },
   {
     "platform": "LinkedIn",
     "url": "https://linkedin.com/in/ArsFbrynt",
     "icon": "fa-brands fa-linkedin",
-    "username": "Aris Febriyanto"
+    "username": "Aris Febriyanto",
+    "child": []
   },
   {
     "platform": "Instagram",
     "url": "https://instagram.com/ars_fbrynt",
     "icon": "fa-brands fa-instagram",
-    "username": "Ars_fbrynt"
+    "username": "Ars_fbrynt",
+    "child": []
   },
   {
     "platform": "Email",
     "url": "mailto:arsfbrynt@gmail.com",
     "icon": "fa-solid fa-envelope",
-    "username": "arsfbrynt@gmail.com"
+    "username": "arsfbrynt@gmail.com",
+    "child": []
   }
 ]
