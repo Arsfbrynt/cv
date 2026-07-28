@@ -308,7 +308,6 @@
     "type": "freelance",
     "projects": []
   },
-
   {
     "id": 6,
     "company": "Own Project",
@@ -353,6 +352,48 @@
           "Workbox Window"
         ],
         "link": "https://dzikrApp.vercel.app"
+      }
+    ]
+  },
+
+  {
+    "id": 6,
+    "company": "Own Project",
+    "role": "Mini Project",
+    "startDate": "-",
+    "endDate": "-",
+    "description": "Web App Full Frontend to help anyone who need it (free)",
+    "technologies": [
+      {
+        "title": "Stack Core",
+        "items": ["Vue", "TypeScript", "JavaScript"]
+      },
+      {
+        "title": "State & API",
+        "items": ["Pinia", "IndexedDB", "Dexie", "lz-string"]
+      },
+      {
+        "title": "UI / Styling",
+        "items": ["Tailwind", "SCSS", "", "Lucide Vue Next", "Workbox Window"]
+      }
+    ],
+    "image": "/images/exp/jayur.png",
+    "type": "Own Project",
+    "projects": [
+      {
+        "name": "Jayur",
+        "description": "Web App to do list and menu note for shopping",
+        "image": "/images/project/own-jayur.png",
+        "tech": [
+          "Vue 3",
+          "TypsScript",
+          "Tailwind",
+          "SCSS",
+          "IndexedDB",
+          "Lucide Vue Next",
+          "Dexie"
+        ],
+        "link": "https://jayur.vercel.app"
       }
     ]
   }
